@@ -1,0 +1,5 @@
+/mock
+/dist
+/src/lib
+node_modules
+*.ts
