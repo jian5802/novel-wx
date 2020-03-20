@@ -1,0 +1,2 @@
+# novel-wx
+wechat-mini
