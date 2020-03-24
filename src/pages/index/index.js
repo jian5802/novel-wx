@@ -1,48 +1,65 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-import { add, minus, asyncAdd } from '../../actions/counter';
+import { changeIsLogin, updateLoginInfo } from '../../actions';
 import './index.scss';
 
-@connect(({ counter }) => ({
-  counter
+@connect(({ isLogin, loginInfo }) => ({
+  isLogin,
+  loginInfo
 }), (dispatch) => ({
-  add () {
-    dispatch(add());
+  changeIsLogin (isLogin) {
+    dispatch(changeIsLogin(isLogin));
   },
-  dec () {
-    dispatch(minus());
-  },
-  asyncAdd () {
-    dispatch(asyncAdd());
+  updateLoginInfo (loginInfo) {
+    dispatch(updateLoginInfo(loginInfo));
   }
 }))
 class Index extends Component {
-    config = {
-      navigationBarTitleText: '首页'
-    };
+  config = {
+    navigationBarTitleText: '首页'
+  };
 
-    componentWillReceiveProps (nextProps) {
-      console.log(this.props, nextProps);
-    }
+  componentWillReceiveProps (nextProps) {
+    console.log(this.props, nextProps);
+    console.log('initinitinit', this.props.isLogin, this.props.loginInfo);
+  }
 
-    componentWillUnmount () { }
+  componentWillUnmount () { }
 
-    componentDidShow () { }
+  componentDidShow () {
+  }
 
-    componentDidHide () { }
+  componentDidHide () { }
 
-    render () {
-      return (
-        <View className='index'>
-          <Button className='add_btn' onClick={this.props.add}>+</Button>
-          <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-          <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-          <View><Text>{this.props.counter.num}</Text></View>
-          <View><Text>Hello, World dj</Text></View>
-        </View>
-      );
-    }
+  showStore = () => {
+    console.log('showStorev', this.props.isLogin, this.props.loginInfo);
+  };
+
+  login = () => {
+    Taro.request({
+      url: 'http://10.203.130.16:3000/novel-wx/login',
+      data: {
+        name: 'dj',
+        pwd: '123',
+      },
+      method: 'GET',
+    }).then(res => {
+      this.props.changeIsLogin(true);
+      this.props.updateLoginInfo(res.data.body);
+      console.log(res);
+    });
+  };
+
+  render () {
+    return (
+      <View className='index'>
+        <View><Text>Hello, World dj</Text></View>
+        <Button onClick={this.login}>登录</Button>
+        <Button onClick={this.showStore}>查看store</Button>
+      </View>
+    );
+  }
 }
 
 export default Index;

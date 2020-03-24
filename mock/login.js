@@ -4,8 +4,8 @@ module.exports = {
   ['GET /novel-wx/login']: (req, res) => {
     return res.json(Mock.mock({
       'body': {
-        openid: '123456',
-        customerName: 'admin',
+        pwd: '123456',
+        name: 'admin',
       },
       'head': {
         'code': '00000000',
