@@ -9,8 +9,11 @@
     "css": "sass"
   },
   "scripts": {
-    "dev": "taro build --type weapp -- --watch",
-    "mock": "node build/mock-server.js"
+    "dev": "cross-env BUILD_ENV=dev node scripts/build.js --watch",
+    "build-test": "cross-env BUILD_ENV=test node scripts/build.js",
+    "build-release": "cross-env BUILD_ENV=release node scripts/build.js",
+    "build-pre": "cross-env BUILD_ENV=pre node scripts/build.js",
+    "build": "cross-env BUILD_ENV=prod node scripts/build.js"
   },
   "author": "jian5802",
   "license": "MIT",
@@ -31,12 +34,14 @@
     "babel-runtime": "^6.26.0",
     "nerv-devtools": "^1.5.5",
     "nervjs": "^1.5.5",
+    "dayjs": "1.8.20",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "0.11.1"
   },
   "devDependencies": {
+    "@tarojs/cli": "2.0.7",
     "@tarojs/mini-runner": "2.0.7",
     "@tarojs/webpack-runner": "2.0.7",
     "@types/react": "^16.4.8",
@@ -61,6 +66,7 @@
     "chokidar": "^3.3.1",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
+    "cross-env": "^7.0.0",
     "ip": "^1.1.5",
     "mocker-api": "^1.13.1",
     "mockjs": "^1.0.1-beta3",

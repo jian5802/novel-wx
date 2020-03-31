@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
+import { login } from 'api';
 import { changeIsLogin, updateLoginInfo } from '../../actions';
 import './index.scss';
 
@@ -36,17 +37,13 @@ class Index extends Component {
     console.log('showStorev', this.props.isLogin, this.props.loginInfo);
   };
 
-  login = () => {
-    Taro.request({
-      url: 'http://10.203.130.16:3000/novel-wx/login',
-      data: {
-        name: 'dj',
-        pwd: '123',
-      },
-      method: 'GET',
+  handleLogin = () => {
+    login({
+      name: 'dj',
+      pwd: '123',
     }).then(res => {
       this.props.changeIsLogin(true);
-      this.props.updateLoginInfo(res.data.body);
+      this.props.updateLoginInfo(res.body);
       console.log(res);
     });
   };
@@ -55,7 +52,7 @@ class Index extends Component {
     return (
       <View className='index'>
         <View><Text>Hello, World dj</Text></View>
-        <Button onClick={this.login}>登录</Button>
+        <Button onClick={this.handleLogin}>登录</Button>
         <Button onClick={this.showStore}>查看store</Button>
       </View>
     );

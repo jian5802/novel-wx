@@ -1,3 +1,7 @@
+/* eslint-disable import/no-commonjs */
+const conf = require('./conf');
+
+console.log('indexindexindex', conf, process.env);
 const config = {
   projectName: 'novel-wx',
   date: '2020-3-20',
@@ -29,8 +33,16 @@ const config = {
       ]
     ]
   },
-  defineConstants: {
+  env: {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    BUILD_ENV: JSON.stringify(conf.BUILD_ENV),
+    DEV_IP: conf.BUILD_ENV !== 'prod'
+      ? JSON.stringify(`http://${conf.localIP}:${conf.mockPort}`)
+      : '""',
+    WX_APPID: JSON.stringify(conf.WX_APPID)
   },
+  defineConstants: {},
+  alias: require('./alias'),
   mini: {
     postcss: {
       autoprefixer: {
@@ -46,7 +58,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: [/^\.weui-/]
         }
       },
       url: {

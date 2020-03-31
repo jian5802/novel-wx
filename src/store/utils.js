@@ -1,6 +1,8 @@
 // store一些常用方法
 
-import store from './index';
+import configStore from './index';
+
+const store = configStore();
 
 /**
  * 返回store的所有数据
