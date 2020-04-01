@@ -1,7 +1,6 @@
 /* eslint-disable import/no-commonjs */
 const conf = require('./conf');
 
-console.log('indexindexindex', conf, process.env);
 const config = {
   projectName: 'novel-wx',
   date: '2020-3-20',

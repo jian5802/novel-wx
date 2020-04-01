@@ -1,4 +1,24 @@
-.index {
+.book-city {
   flex-direction: column;
   width: 100%;
+
+  .head {
+    width: 100%;
+    position: relative;
+
+    .head-search {
+      position: absolute;
+      top: 59px;
+      left: 70px;
+    }
+
+    .head-input {
+      width: 500px;
+      height: 50px;
+      line-height: 50px;
+      position: absolute;
+      top: 50px;
+      left: 125px;
+    }
+  }
 }

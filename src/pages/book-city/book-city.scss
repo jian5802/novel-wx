@@ -1,0 +1,129 @@
+.book-city {
+  flex-direction: column;
+  width: 100%;
+
+  .head {
+    width: 700px;
+    height: 80px;
+    background: #F8F8F8;
+    margin: 30px auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    line-height: 80px;
+
+    .head-search {
+      padding: 0 20px;
+      position: relative;
+      top: 6px;
+    }
+
+    .head-text {
+      display: inline-block;
+      color: #999999;
+    }
+  }
+
+  .city-body {
+    width: 100%;
+
+    .tabs {
+      width: 100%;
+      height: 80px;
+      box-shadow: 0 4px 4px #e6e6e6;
+      position: relative;
+
+      .tabs-text {
+        font-size: 36px;
+        margin-left: 25px;
+      }
+
+      .man-line {
+        width: 30px;
+        height: 0;
+        border-bottom: 1px solid #ff0000;
+        position: absolute;
+        bottom: 1px;
+        left: 45px;
+      }
+
+      .women-line {
+        width: 30px;
+        height: 0;
+        border-bottom: 1px solid #ff0000;
+        position: absolute;
+        bottom: 1px;
+        left: 140px;
+      }
+    }
+
+    .body-title {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .hot-books {
+      width: 700px;
+      margin: 40px auto;
+      border-bottom: 1px solid #dbdbdb;
+      height: 300px;
+
+      .hot-top {
+        height: 240px;
+        background: #707070;
+        border-radius: 12px;
+        padding: 10px 0;
+
+        .hot-item {
+          width: 400px;
+          height: 80px;
+          line-height: 80px;
+          padding-left: 20px;
+
+          .hot-title {
+            display: inline-block;
+            width: 220px;
+            color: #ffffff;
+            font-size: 32px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          .hot-author {
+            display: inline-block;
+            width: 140px;
+            color: #bfbfbf;
+            font-size: 28px;
+            padding-left: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    .today-welfare {
+      width: 700px;
+      margin: 0 auto;
+      margin-top: 50px;
+      border-bottom: 1px solid #dbdbdb;
+      height: 300px;
+    }
+
+    .classic-version {
+      width: 700px;
+      margin: 0 auto;
+      margin-top: 50px;
+      border-bottom: 1px solid #dbdbdb;
+      height: 300px;
+    }
+
+    .new-books {
+      width: 700px;
+      margin: 0 auto;
+      margin-top: 50px;
+      height: 300px;
+    }
+  }
+}

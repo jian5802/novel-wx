@@ -1,62 +1,38 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Button, Text } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
-import { login } from 'api';
-import { changeIsLogin, updateLoginInfo } from '../../actions';
+import { View, Input, Icon  } from '@tarojs/components';
 import './index.scss';
 
-@connect(({ isLogin, loginInfo }) => ({
-  isLogin,
-  loginInfo
-}), (dispatch) => ({
-  changeIsLogin (isLogin) {
-    dispatch(changeIsLogin(isLogin));
-  },
-  updateLoginInfo (loginInfo) {
-    dispatch(updateLoginInfo(loginInfo));
-  }
-}))
-class Index extends Component {
+class BookCity extends Component {
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '读者阅书'
   };
 
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps);
-    console.log('initinitinit', this.props.isLogin, this.props.loginInfo);
   }
 
   componentWillUnmount () { }
 
-  componentDidShow () {
-  }
+  componentDidShow () { }
 
   componentDidHide () { }
 
-  showStore = () => {
-    console.log('showStorev', this.props.isLogin, this.props.loginInfo);
-  };
-
-  handleLogin = () => {
-    login({
-      name: 'dj',
-      pwd: '123',
-    }).then(res => {
-      this.props.changeIsLogin(true);
-      this.props.updateLoginInfo(res.body);
-      console.log(res);
-    });
-  };
-
   render () {
     return (
-      <View className='index'>
-        <View><Text>Hello, World dj</Text></View>
-        <Button onClick={this.handleLogin}>登录</Button>
-        <Button onClick={this.showStore}>查看store</Button>
+      <View className='book-city'>
+        <View className='head'>
+          <Icon
+            size='16'
+            className='head-search'
+            type='search'/>
+          <Input
+            className='head-input'
+            type='text'
+            placeholder='凡人修仙传'/>
+        </View>
       </View>
     );
   }
 }
 
-export default Index;
+export default BookCity;
