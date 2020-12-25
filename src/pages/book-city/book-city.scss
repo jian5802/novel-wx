@@ -56,28 +56,63 @@
       }
     }
 
+    .cover {
+      width: 150px;
+      height: 200px;
+      box-shadow: 0 0 2px #cccccc;
+    }
+
+    .title-text {
+      color: #666666;
+      font-size: 24px;
+    }
+
+    .author-text {
+      color: #999999;
+      font-size: 24px;
+    }
+
     .body-title {
       font-size: 40px;
       font-weight: 600;
+      color: #666666;
+      margin-bottom: 20px;
+      display: inline-block;
     }
 
     .hot-books {
       width: 700px;
       margin: 40px auto;
       border-bottom: 1px solid #dbdbdb;
-      height: 300px;
+      padding-bottom: 50px;
 
       .hot-top {
         height: 240px;
         background: #707070;
         border-radius: 12px;
         padding: 10px 0;
+        position: relative;
 
         .hot-item {
           width: 400px;
           height: 80px;
           line-height: 80px;
-          padding-left: 20px;
+          position: relative;
+
+          .triangle {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left-color: white;
+            position: absolute;
+            top: 32px;
+            left: 10px;
+          }
+
+          .hover {
+            display: none;
+          }
 
           .hot-title {
             display: inline-block;
@@ -87,6 +122,8 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            position: relative;
+            left: 30px;
           }
 
           .hot-author {
@@ -94,11 +131,54 @@
             width: 140px;
             color: #bfbfbf;
             font-size: 28px;
-            padding-left: 20px;
+            margin-left: 30px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
           }
+        }
+
+        .hot-cover {
+          width: 170px;
+          height: 200px;
+          position: absolute;
+          right: 30px;
+          top: 30px;
+
+          .book-cover {
+            width: 150px;
+            height: 200px;
+            position: absolute;
+          }
+
+          .top {
+            z-index: 9;
+          }
+
+          .mid {
+            z-index: 2;
+            height: 180px;
+            left: 10px;
+            top: 10px;
+          }
+
+          .bottom {
+            z-index: 1;
+            height: 160px;
+            left: 20px;
+            top: 20px;
+          }
+        }
+      }
+
+      .hot-list {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .hot-list-container {
+          width: 150px;
         }
       }
     }
@@ -109,6 +189,42 @@
       margin-top: 50px;
       border-bottom: 1px solid #dbdbdb;
       height: 300px;
+
+      .count-down {
+        display: inline-block;
+
+        .time {
+          color: white;
+          font-weight: 600;
+          font-size: 24px;
+          background: linear-gradient(to right, #dd412d, #ec5f5c);
+          display: inline-block;
+          height: 42px;
+          line-height: 42px;
+          padding-left: 20px;
+          margin-left: 20px;
+        }
+
+        .tips {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border: 22px solid #ec5f5c;
+          border-right-color: transparent;
+          position: relative;
+          top: 13px;
+        }
+      }
+
+      .today-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .today-item {
+          width: 150px;
+        }
+      }
     }
 
     .classic-version {

@@ -6,7 +6,6 @@ function resolve(dir = '') {
 }
 
 module.exports = {
-  'moment': 'dayjs',
   'src': resolve('src'),
   'assets': resolve('src/assets'),
   'actions': resolve('src/actions'),

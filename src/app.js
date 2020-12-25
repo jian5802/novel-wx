@@ -5,14 +5,18 @@ import configStore from './store';
 import './app.scss';
 
 const store = configStore();
+Taro.cloud.init({
+  env: 'test-meeuu'
+});
 
 class App extends Component {
   config = {
     pages: [
-      // 'pages/index/index',
+      'pages/index/index',
       'pages/book-city/book-city',
       'pages/recommend/recommend',
-      'pages/bookshelf/bookshelf'
+      'pages/book-shelf/book-shelf',
+      'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -38,7 +42,7 @@ class App extends Component {
           selectedIconPath: 'assets/images/book-active.png',
         },
         {
-          pagePath: 'pages/bookshelf/bookshelf',
+          pagePath: 'pages/book-shelf/book-shelf',
           text: '书架',
           iconPath: 'assets/images/bshelf.png',
           selectedIconPath: 'assets/images/bshelf-active.png',

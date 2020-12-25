@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import './bookshelf.scss';
+import './book-shelf.scss';
 
-class bookshelf extends Component {
+class BookShelf extends Component {
   config = {
     navigationBarTitleText: '读者阅书'
   };
@@ -26,4 +26,4 @@ class bookshelf extends Component {
   }
 }
 
-export default bookshelf;
+export default BookShelf;
