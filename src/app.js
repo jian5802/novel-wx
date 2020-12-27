@@ -5,6 +5,7 @@ import configStore from './store';
 import './app.scss';
 
 const store = configStore();
+
 Taro.cloud.init({
   env: 'test-meeuu'
 });

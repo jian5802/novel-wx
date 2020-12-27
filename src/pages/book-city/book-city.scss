@@ -39,7 +39,7 @@
 
       .man-line {
         width: 30px;
-        height: 0;
+        height: 1px;
         border-bottom: 1px solid #ff0000;
         position: absolute;
         bottom: 1px;
@@ -48,7 +48,7 @@
 
       .women-line {
         width: 30px;
-        height: 0;
+        height: 1px;
         border-bottom: 1px solid #ff0000;
         position: absolute;
         bottom: 1px;
@@ -188,7 +188,6 @@
       margin: 0 auto;
       margin-top: 50px;
       border-bottom: 1px solid #dbdbdb;
-      height: 300px;
 
       .count-down {
         display: inline-block;
@@ -201,18 +200,8 @@
           display: inline-block;
           height: 42px;
           line-height: 42px;
-          padding-left: 20px;
+          padding: 0 20px;
           margin-left: 20px;
-        }
-
-        .tips {
-          display: inline-block;
-          width: 0;
-          height: 0;
-          border: 22px solid #ec5f5c;
-          border-right-color: transparent;
-          position: relative;
-          top: 13px;
         }
       }
 
@@ -220,6 +209,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 40px;
 
         .today-item {
           width: 150px;

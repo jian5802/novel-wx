@@ -53,8 +53,8 @@ class BookCity extends Component {
 
   // 定时器初始化
   timerInit = () => {
-    const { trianglePosition } = this.state;
     this.interval = setInterval(() => {
+      const { trianglePosition } = this.state;
       this.setState({
         trianglePosition: (trianglePosition + 1) % 3
       });
@@ -105,10 +105,12 @@ class BookCity extends Component {
     if (type === 'man') {
       this.setState({ sex: '1' }, () => {
         this.queryHot();
+        this.queryToday();
       });
     } else {
       this.setState({ sex: '0' }, () => {
         this.queryHot();
+        this.queryToday();
       });
     }
   };
@@ -202,7 +204,6 @@ class BookCity extends Component {
             <Text className='body-title'>今日福利</Text>
             <View className='count-down'>
               <View className='time'>{countDown}</View>
-              <View className='tips'/>
             </View>
             <View className='today-container'>
               {
